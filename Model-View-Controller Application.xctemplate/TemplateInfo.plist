@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.hybris.mobile.MVCApplication</string>
+	<key>Ancestors</key>
+	<array>
+		<!-- <string>com.apple.dt.unit.storyboardApplication</string> -->
+		<string>com.apple.dt.unit.coreDataCocoaTouchApplication</string> 
+	</array>
+	<key>Concrete</key>
+	<true/>
+
+	<key>Description</key>
+	<string>This template provides a starting point for an application that uses a MVC design patterns. It provides a view controller to manage the view, and a storyboard or nib file that contains the view.</string>
+
+		<!-- Prodfile Begin -->
+		<key>Definitions</key>
+			<dict>
+				<key>../Podfile</key>
+				<string>platform :ios, "8.0"
+use_frameworks!
+
+target '___PACKAGENAME___' do
+	pod 'Alamofire', '2.0.2'
+	pod 'SwiftyJSON', '2.3.0'
+	pod 'ObjectMapper', '~> 0.17'
+end
+
+target '___PACKAGENAME___Tests' do
+
+end
+				</string>
+			</dict>
+			<!-- Prodfile End -->
+
+
+		<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Units</key>
+			<dict>
+				<key>Objective-C</key>
+			   	<!-- ****************** Objective-C Begin ****************** -->
+				<dict>
+					<key>Definitions</key>
+					<!-- Definitions Begin -->
+					<dict>
+						<!-- Define AppDelegate for Objective-C-->
+						<key>AppDelegate.m:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
+						<string>self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+// Override point for customization after application launch.
+self.window.backgroundColor = [UIColor whiteColor];</string>
+						<key>AppDelegate.m:implementation:methods:applicationdidFinishLaunchingWithOptions:return</key>
+						<string>
+MainViewController *mainViewController = [MainViewController new];
+mainViewController.title   = @"___PACKAGENAME___";
+UINavigationController       *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+self.window.rootViewController = navigationController;
+[self.window makeKeyAndVisible];
+
+return YES;
+</string>
+
+
+<!-- Project Group Structure Begin -->
+		<!-- StyleSheet -->
+		<key>./StyleSheet.h</key>
+		<dict>
+			<key>Path</key>
+			<string>./StyleSheet.h</string>
+		</dict>
+		<!-- Services Group -->
+		<key>./StorageManager.h</key>
+		<dict>
+			<key>Path</key>
+			<string>./StorageManager.h</string>
+			<key>Group</key>
+		  	<array>
+           		<string>Services</string>
+       	 	</array>
+		</dict>
+		<key>./StorageManager.m</key>
+		<dict>
+			<key>Path</key>
+			<string>./StorageManager.m</string>
+			<key>Group</key>
+		  	<array>
+           		<string>Services</string>
+       	 	</array>
+		</dict>
+
+		<!-- Helpers Group -->
+		<key>./UIView+Utilities.h</key>
+		<dict>
+			<key>Path</key>
+			<string>./UIView+Utilities.h</string>
+			<key>Group</key>
+		  	<array>
+           		<string>Helpers</string>
+       	 	</array>
+		</dict>
+		<key>./UIView+Utilities.m</key>
+		<dict>
+			<key>Path</key>
+			<string>./UIView+Utilities.m</string>
+			<key>Group</key>
+		  	<array>
+           		<string>Helpers</string>
+       	 	</array>
+		</dict>
+
+		<!-- Controllers Group -->
+		<key>./MainViewController.h</key>
+		<dict>
+			<key>Path</key>
+			<string>./MainViewController.h</string>
+			<key>Group</key>
+		  	<array>
+           		<string>Controllers</string>
+       	 	</array>
+		</dict>
+		<key>./MainViewController.m</key>
+		<dict>
+			<key>Path</key>
+			<string>./MainViewController.m</string>
+			<key>Group</key>
+		  	<array>
+           		<string>Controllers</string>
+       	 	</array>
+		</dict>
+
+		<!-- Models Group -->
+		<key>./Item.h</key>
+		<dict>
+			<key>Path</key>
+			<string>./Item.h</string>
+			<key>Group</key>
+		  	<array>
+           		<string>Models</string>
+       	 	</array>
+		</dict>
+		<key>./Item.m</key>
+		<dict>
+			<key>Path</key>
+			<string>./Item.m</string>
+			<key>Group</key>
+		  	<array>
+           		<string>Models</string>
+       	 	</array>
+		</dict>
+
+
+		<!-- Views Group -->
+		<key>./MainView.h</key>
+		<dict>
+			<key>Path</key>
+			<string>./MainView.h</string>
+			<key>Group</key>
+		  	<array>
+           		<string>Views</string>
+       	 	</array>
+		</dict>
+		<key>./MainView.m</key>
+		<dict>
+			<key>Path</key>
+			<string>./MainView.m</string>
+			<key>Group</key>
+		  	<array>
+           		<string>Views</string>
+       	 	</array>
+		</dict>
+<!-- Project Group Structure End -->
+
+					</dict>
+					<!-- Definitions End -->
+
+
+			<!-- Nodes Begin -->
+					<key>Nodes</key>
+					<array>
+						<string>AppDelegate.m:imports:importHeader:MainViewController.h</string>
+						<string>./StyleSheet.h</string>
+						<string>./StorageManager.h</string>
+						<string>./StorageManager.m</string>
+						<string>./UIView+Utilities.h</string>
+						<string>./UIView+Utilities.m</string>
+						<string>./MainViewController.h</string>
+						<string>./MainViewController.m</string>
+						<string>./Item.h</string>
+						<string>./Item.m</string>
+						<string>./MainView.h</string>
+						<string>./MainView.m</string>
+						<string>../Podfile</string>
+					</array>
+					<!-- Nodes End -->
+				</dict>
+				<!-- ****************** Objective-C End ****************** -->
+
+				<key>Swift</key>
+				<!-- ****************** Swift Begin ****************** -->
+				<dict>
+					<key>Definitions</key>
+					<!-- Definitions Begin -->
+					<dict>
+						<!-- Define AppDelegate for Swift -->
+						<key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
+						<string>self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+// Override point for customization after application launch.
+self.window!.backgroundColor = UIColor.whiteColor()</string>
+						<key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:return</key>
+						<string>
+//init globals
+Global.sharedInstance
+        
+let mainViewController = MainViewController()
+mainViewController.title = "___PACKAGENAME___"
+let navigationController = UINavigationController(rootViewController: mainViewController)
+self.window!.rootViewController = navigationController
+self.window!.makeKeyAndVisible()
+        
+return true
+</string>
+
+<!-- Project Group Structure Begin -->
+<!-- Services Group -->
+		<key>./LogService.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>./LogService.swift</string>
+			<key>Group</key>
+		  	<array>
+           		<string>Services</string>
+       	 	</array>
+		</dict>
+
+		<!-- Helpers Group -->
+		<key>./UIView+Utilities.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>./UIView+Utilities.swift</string>
+			<key>Group</key>
+		  	<array>
+           		<string>Helpers</string>
+       	 	</array>
+		</dict>
+
+		 <!-- Controllers Group -->
+		<key>./MainViewController.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>./MainViewController.swift</string>
+			<key>Group</key>
+		  	<array>
+           		<string>Controllers</string>
+       	 	</array>
+		</dict>
+
+		<!-- Models Group -->
+		<key>./Global.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>./Global.swift</string>
+			<key>Group</key>
+		  	<array>
+           		<string>Models</string>
+       	 	</array>
+		</dict>
+
+		<!-- Views Group -->
+		<key>./MainView.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>./MainView.swift</string>
+			<key>Group</key>
+		  	<array>
+           		<string>Views</string>
+       	 	</array>
+		</dict>
+<!-- Project Group Structure End -->
+
+</dict>
+<!-- Definitions End -->
+
+
+					<!-- Nodes Begin -->
+					<key>Nodes</key>
+					<array>
+						<string>./LogService.swift</string>
+						<string>./UIView+Utilities.swift</string>		
+						<string>./MainViewController.swift</string>
+						<string>./Global.swift</string>
+						<string>./MainView.swift</string>
+						<string>../Podfile</string>
+					</array>
+					<!-- Nodes End -->
+
+
+				</dict>
+				<!-- ****************** Swift End  ****************** -->
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
